@@ -1,0 +1,93 @@
+* {
+    cursor: url(/cursor/Unavailable.cur),pointer;
+    font-family: 'Luckiest Guy', cursive;
+}
+body {
+    margin: 0;
+    background-image: url(/img/background.png);
+    background-size: cover;
+}
+section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#list-section {
+    position: absolute;
+    bottom: 0%;
+    right: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 1180px;
+    height: 932px;
+    background: #F6F6F6;
+    border-radius: 50px 50px 0px 0px;
+}
+section>p {
+    font-size: 50px;
+    color: #7793FE;
+}
+section form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+section form div img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+}
+section form div p {
+    color: #2C3761;
+    font-size: 25px;
+}
+.avilable-game {
+    border-radius: 15px;
+    width: 200px;
+    overflow: hidden;
+}
+form>div>.avilable-game img:hover {
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+    cursor: url(/cursor/Link\ Select.cur),pointer;
+
+
+}
+form>div>.avilable-game img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.levels>img:hover {
+    transition: .33s;
+    
+}
+#hovering-img {
+    cursor: url(/cursor/Link\ Select.cur),pointer;
+
+    position: absolute;
+    filter: brightness(70%);
+}
+.levels .hover-show>p {
+    position: absolute;
+    color: #F6F6F6;
+    -webkit-text-stroke: 1px hwb(0 0% 100% / 0.815);
+}
+.hover-show {
+    opacity: 0%;
+    position: absolute;
+}
+.hover-show:hover {
+    transition: .33s;
+    opacity: 100%;
+}
