@@ -7,6 +7,17 @@ body {
     background-image: url(/img/background.png);
     background-size: cover;
 }
+#list-section>a img {
+    width: 80px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 4;
+
+}
+#list-section>a img:hover {
+    
+}
 section form {
     display: flex;
     justify-content: center;
@@ -24,9 +35,10 @@ section form {
 section{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     width: 1180px;
-    height: 932px;
+    height: 1060px;
     background: #F6F6F6;
     border-radius: 50px 50px 0px 0px;
 }
