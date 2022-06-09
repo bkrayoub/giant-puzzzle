@@ -13,11 +13,11 @@
 <body>
     <div id="game">
         <div id="clouds">
-            <img src="/img/cloud.png" id="cloud-1">
-            <img src="/img/cloud.png" id="cloud-2">
-            <img src="/img/cloud.png" id="cloud-3">
-            <img src="/img/cloud.png" id="cloud-4">
-            <img src="/img/cloud.png" id="cloud-5">
+            <img src="/img/cloud.png" id="cloud-1" class="cloud" data-value="-2">
+            <img src="/img/cloud.png" id="cloud-2" class="cloud" data-value="6">
+            <img src="/img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="4">
+            <img src="/img/cloud.png" id="cloud-4" class="cloud" data-value="-6">
+            <img src="/img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="8">
         
         </div>
         <form action="" id="menu-fram">
@@ -41,5 +41,19 @@
 
         </form>
     </div>
+    <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            document.querySelectorAll(".cloud").forEach(function(move){
+
+                var moving_value = move.getAttribute("data-value");
+                var x = (e.clientX * moving_value) / 250;
+                var y = (e.clientY * moving_value) / 250;
+
+                move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+            
+            });
+            }
+    </script>
 </body>
 </html>
