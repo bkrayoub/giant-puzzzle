@@ -16,7 +16,7 @@ body {
 
 }
 #list-section>a img:hover {
-    
+
 }
 section form {
     display: flex;
@@ -103,3 +103,33 @@ form>div>.avilable-game img {
     transition: .33s;
     opacity: 100%;
 }
+/* clouds backgroun */
+
+#clouds img {
+    width: 314px;
+    position: absolute;
+}
+#cloud-1 {
+    right: 0%;
+    top: 5%;
+}
+#cloud-2 {
+    z-index: 4;
+    left: 2%;
+    top: 20%;
+}
+#cloud-3 {
+    right: 10%;
+    top: 35%;
+    z-index: 0;
+}
+#cloud-4 {
+bottom: 25%;
+left: 10%;
+}
+#cloud-5 {
+    bottom: 8%;
+    right: 04%;
+    z-index: 4;
+}
+/* END */
