@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant Puzzle | Scoreboard</title>
+</head>
+<body>
+    <div class="background">
+        <img src="/img/scoreboard-imgs/rocket.png" class="background-elements" data-value="10">
+        <img src="/img/scoreboard-imgs" class="background-elements" data-value="3">
+        <img src="/img/scoreboard-imgs" class="background-elements" data-value="2">
+        <img src="/img/scoreboard-imgs" class="background-elements" data-value="4">
+        <img src="/img/scoreboard-imgs" class="background-elements" data-value="1">
+    </div>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            document.querySelectorAll(".background-elements").forEach(function(move){
+
+                var moving_value = move.getAttribute("data-value");
+                var x = (e.clientX * moving_value) / 150;
+                var y = (e.clientY * moving_value) / 150;
+
+                move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+            
+            });
+            }
+    </script>
+</body>
+</html>
