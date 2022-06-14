@@ -1,6 +1,7 @@
 * {
     cursor: url(/cursor/Unavailable.cur),pointer;
     font-family: 'Luckiest Guy', cursive;
+    
 }
 ::-webkit-scrollbar {
     display: none;
@@ -19,6 +20,9 @@ body {
     top: 25px;
     left: 25px;
     z-index: 4;
+}
+#go-back:hover {
+    filter: brightness(80%);
 }
 #title>h1 {
     font-size: 50px;
