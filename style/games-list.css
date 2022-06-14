@@ -7,7 +7,7 @@ body {
     background-image: url(/img/background.png);
     background-size: cover;
 }
-#list-section>a img {
+body>a img {
     width: 80px;
     position: absolute;
     top: 25px;
@@ -15,7 +15,7 @@ body {
     z-index: 4;
 
 }
-#list-section>a img:hover {
+body>a img:hover {
 
 }
 section form {

@@ -1,0 +1,48 @@
+* {
+    cursor: url(/cursor/Unavailable.cur),pointer;
+    font-family: 'Luckiest Guy', cursive;
+}
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+#clouds img {
+    width: 314px;
+    position: absolute;
+}
+#game>a img {
+    width: 80px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 4;
+
+}
+#menu-fram {
+    background-color: #F6F6F6;
+    height: 679.52px;
+    width: 587px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    
+}
+#menu-fram input {
+    font-family: 'Luckiest Guy', cursive;
+    color: #FFF;
+    background-color: #7793FE;
+    border: 3px #555555 solid;
+    border-radius: 20px;
+    width: 455.61px;
+    height: 71.53px;
+    margin-bottom: 27px;
+    text-align: center;
+    font-size: 40PX;
+}
