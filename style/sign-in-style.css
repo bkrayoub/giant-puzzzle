@@ -21,6 +21,7 @@ body>a img {
 }
 body>a img:hover {
     filter: brightness(80%);
+    cursor: url(/cursor/Link\ Select.cur),pointer;
 }
 /* game viewport */
 #game {

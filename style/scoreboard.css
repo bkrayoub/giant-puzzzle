@@ -23,6 +23,7 @@ body {
 }
 #go-back:hover {
     filter: brightness(80%);
+    cursor: url(/cursor/Link\ Select.cur),pointer;
 }
 #title>h1 {
     font-size: 50px;
