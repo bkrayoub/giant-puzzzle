@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,19 +8,19 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
     </style>
-    <link rel="stylesheet" href="/style/sign-up-style.css">
+    <link rel="stylesheet" href="style/sign-up-style.css">
 </head>
 <body>
     <div id="clouds">
-        <img src="/img/cloud.png" id="cloud-1" class="cloud" data-value="5">
-        <img src="/img/cloud.png" id="cloud-2" class="cloud" data-value="3">
-        <img src="/img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
-        <img src="/img/cloud.png" id="cloud-4" class="cloud" data-value="4">
-        <img src="/img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
+    <img src="img/cloud.png" id="cloud-1" class="cloud" data-value="-5">
+        <img src="img/cloud.png" id="cloud-2" class="cloud" data-value="3">
+        <img src="img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
+        <img src="img/cloud.png" id="cloud-4" class="cloud" data-value="4">
+        <img src="img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
     
     </div>
-    <a href="/sign-in.html">
-        <img src="/img/exit.png">
+    <a href="sign-in.php">
+        <img src="img/exit.png">
     </a>
     <div id="game">
 
@@ -28,7 +28,7 @@
         <form action="" id="menu-form">
   
             <div id="user-pfp">
-                <img src="/img/pfp.png" alt="">
+                <img src="img/pfp.png" alt="">
             </div>
         
             

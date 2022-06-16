@@ -1,9 +1,9 @@
 * {
-    cursor: url(/cursor/Unavailable.cur),pointer;
+    cursor: url(../cursor/Unavailable.cur),pointer;
     font-family: 'Luckiest Guy', cursive;
 }
 body {
-    background-image: url(/img/gameviewport.png);
+    background-image: url(../img/gameviewport.png);
     scroll-behavior: smooth;
     margin: 0;
     display: flex;
@@ -53,7 +53,7 @@ body {
     flex-wrap: wrap;
 }
 #suduko-section input {
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
     width: 20%;
     height: 20%;
     margin: 0px;
@@ -105,7 +105,7 @@ body>a img {
 }
 body>a img:hover {
     filter: brightness(80%);
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
 }
 #color-tiles {
     display: flex;
@@ -128,7 +128,7 @@ body>a img:hover {
     border-radius: 20px;
 }
 #suduko-select-section>div input:HOVER {
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
 
 }
 #suduko-select-section>div {
@@ -169,7 +169,7 @@ body>a img:hover {
     background-color: #98cf6b;
 }
 #startTimer:hover {
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
     background-color: #88b861;
 
 }
@@ -181,7 +181,7 @@ body>a img:hover {
     background-color: rgb(201, 201, 201);
 }
 #resetTimer:hover {
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
 
     background-color: rgb(168, 168, 168);
 

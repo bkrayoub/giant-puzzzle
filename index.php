@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,34 +8,34 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
     </style>
-    <link rel="stylesheet" href="/style/home-style.css">
+    <link rel="stylesheet" href="style/home-style.css">
 </head>
 <body>
     <div id="game">
         <div id="clouds">
-            <img src="/img/cloud.png" id="cloud-1" class="cloud" data-value="5">
-            <img src="/img/cloud.png" id="cloud-2" class="cloud" data-value="3">
-            <img src="/img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
-            <img src="/img/cloud.png" id="cloud-4" class="cloud" data-value="4">
-            <img src="/img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
+            <img src="img/cloud.png" id="cloud-1" class="cloud" data-value="5">
+            <img src="img/cloud.png" id="cloud-2" class="cloud" data-value="3">
+            <img src="img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
+            <img src="img/cloud.png" id="cloud-4" class="cloud" data-value="4">
+            <img src="img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
         
         </div>
         <form action="" id="menu-fram">
-            <img src="/img/large-logo.png" alt="" width="372px">
+            <img src="img/large-logo.png" alt="" width="372px">
 
-                <a href="/choose-game.html">
+                <a href="choose-game.php">
                     <input type="button" value="PLAY" style="margin-top: 130px;">
                 </a>
-                <a href="/sign-in.html">
+                <a href="sign-in.php">
                     <input type="button" value="ACCOUNT">
                 </a>                
-                <a href="/scoreboard.html">
+                <a href="scoreboard.php">
                     <input type="button" value="SCOREBOARD">
                 </a>
                 <a href="">
                     <input type="button" value="HOW TO PLAY">
                 </a>
-                <a href="/credit.html">
+                <a href="credit.php">
                     <input type="button" value="CREDIT">
                 </a>
 

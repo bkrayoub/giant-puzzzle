@@ -1,5 +1,5 @@
 * {
-    cursor: url(/cursor/Unavailable.cur),pointer;
+    cursor: url(../cursor/Unavailable.cur),pointer;
     font-family: 'Luckiest Guy', cursive;
     
 }
@@ -7,7 +7,7 @@
     display: none;
 }
 body {
-    background-image: url(/img/game\ menu\ background.png);
+    background-image: url(../img/game\ menu\ background.png);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@ body {
 }
 #go-back:hover {
     filter: brightness(80%);
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
 }
 #title>h1 {
     font-size: 50px;

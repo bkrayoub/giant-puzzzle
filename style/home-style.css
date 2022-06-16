@@ -1,11 +1,13 @@
 *{
-    cursor: url(/cursor/Unavailable.cur),pointer;
+    cursor: url(../cursor/Unavailable.cur),pointer;
 }
 body {
     scroll-behavior: smooth;
     margin: 0;
     display: flex;
     justify-content: center;
+    background-image: url(../img/background.png);
+    background-size: cover;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -14,8 +16,7 @@ body {
 
 /* game viewport */
 #game {
-    background-image: url(/img/background.png);
-    background-size: cover;
+
     width: 1920px;
     height: 1080px;
     display: flex;
@@ -23,7 +24,7 @@ body {
     justify-content: center;
 }
 div:hover {
-    cursor: url(/cursor/Unavailable.cur),pointer;
+    cursor: url(../cursor/Unavailable.cur),pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -53,7 +54,7 @@ div:hover {
     font-size: 40PX;
 }
 #menu-fram input:hover {
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
     transition: .33s;
     
     background-color: #5D74C9;

@@ -1,5 +1,5 @@
 * {
-    cursor: url(/cursor/Unavailable.cur),pointer;
+    cursor: url(../cursor/Unavailable.cur),pointer;
     font-family: 'Luckiest Guy', cursive;
 }
 body {
@@ -21,11 +21,11 @@ body>a img {
 }
 body>a img:hover {
     filter: brightness(80%);
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
 }
 /* game viewport */
 #game {
-    background-image: url(/img/background.png);
+    background-image: url(../img/background.png);
     background-size: cover;
     width: 1920px;
     height: 1080px;
@@ -34,7 +34,7 @@ body>a img:hover {
     justify-content: center;
 }
 div:hover {
-    cursor: url(/cursor/Unavailable.cur),pointer;
+    cursor: url(../cursor/Unavailable.cur),pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -82,7 +82,7 @@ p {
     font-size: 40PX;
 }
 input[type=text]:hover{
-    cursor: url(/cursor/Text\ Select.cur),pointer;
+    cursor: url(../cursor/Text\ Select.cur),pointer;
 
 }
 input[type=password]::placeholder{
@@ -104,7 +104,7 @@ input[type=button]{
     background-color: #7793FE;
 }
 input[type=button]:hover{
-    cursor: url(/cursor/Link\ Select.cur),pointer;
+    cursor: url(../cursor/Link\ Select.cur),pointer;
     background-color: #5D74C9;
     
 

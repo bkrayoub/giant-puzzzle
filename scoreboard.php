@@ -1,4 +1,8 @@
-9<!DOCTYPE html>
+
+<?php
+    $phpconnect = mysqli_connect("localhost","root","","giant_puzzle");
+ 
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,22 +11,22 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
     </style>
-    <link rel="stylesheet" href="/style/scoreboard.css">
+    <link rel="stylesheet" href="style/scoreboard.css">
     <title>Giant Puzzle | Scoreboard</title>
 </head>
 
 <body>
 
     <div class="background">
-        <img src="/img/scoreboard-imgs/rocket.png" class="background-elements" data-value="10" id="img1">
-        <img src="/img/scoreboard-imgs/bmo.png" class="background-elements" data-value="-1" id="img2">
-        <img src="/img/scoreboard-imgs/time.png" class="background-elements" data-value="4" id="img3">
-        <img src="/img/scoreboard-imgs/copa.png" class="background-elements" data-value="4" id="img4">
-        <img src="/img/scoreboard-imgs/controler.png" class="background-elements" data-value="3" id="img5">
+        <img src="img/scoreboard-imgs/rocket.png" class="background-elements" data-value="10" id="img1">
+        <img src="img/scoreboard-imgs/bmo.png" class="background-elements" data-value="-1" id="img2">
+        <img src="img/scoreboard-imgs/time.png" class="background-elements" data-value="4" id="img3">
+        <img src="img/scoreboard-imgs/copa.png" class="background-elements" data-value="4" id="img4">
+        <img src="img/scoreboard-imgs/controler.png" class="background-elements" data-value="3" id="img5">
     </div>
 
-    <a href="/index.html">
-        <img src="/img/exit.png" alt="go back" id="go-back">
+    <a href="index.php">
+        <img src="img/exit.png" alt="go back" id="go-back">
     </a>
 
     <div id="title">
@@ -33,7 +37,7 @@
         
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -43,7 +47,7 @@
         
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -53,7 +57,7 @@
         
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -63,7 +67,7 @@
         
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -72,7 +76,7 @@
         </div>
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -80,7 +84,7 @@
             <p id="rank">1</p>
         </div>        <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -89,7 +93,7 @@
         </div>
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>
@@ -98,7 +102,7 @@
         </div>
         <div id="rank-box">
             <div id="rank-img">
-                <img src="/img/pfp.png">
+                <img src="img/pfp.png">
             </div>
             <p id="userID">USER ID</p>
             <p id="username">USER NAME</p>

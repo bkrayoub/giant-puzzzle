@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+<?php
+    $phpconnect = mysqli_connect("localhost","root","","giant_puzzle");
+ 
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,8 +15,8 @@
     <title>Giant Puzzle | 25 num & color</title>
 </head>
 <body>
-    <a href="/index.html">
-        <img src="/img/exit.png" alt="go back" id="go-back">
+    <a href="index.php">
+        <img src="img/exit.png" alt="go back" id="go-back">
     </a>
     <div id="container">
         <div id="soduko">
@@ -45,7 +49,7 @@
             </div>
         </div>
         <div id="suduko-info">
-            <img src="/img/large-logo.png" alt="">
+            <img src="img/large-logo.png" alt="">
             <div id="selected-tile">
                 <input type="button" value="">
             </div>
@@ -82,7 +86,7 @@
             </div>
         </div>
     </div>
-<script src="/script/game1.js">
+<script src="script/game1.js">
 </script>
 </body>
 </html>

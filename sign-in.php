@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,19 +8,19 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
     </style>
-    <link rel="stylesheet" href="/style/sign-in-style.css">
+    <link rel="stylesheet" href="style/sign-in-style.css">
 </head>
 <body>
     <div id="clouds">
-        <img src="/img/cloud.png" id="cloud-1" class="cloud" data-value="5">
-        <img src="/img/cloud.png" id="cloud-2" class="cloud" data-value="3">
-        <img src="/img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
-        <img src="/img/cloud.png" id="cloud-4" class="cloud" data-value="4">
-        <img src="/img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
+        <img src="img/cloud.png" id="cloud-1" class="cloud" data-value="-5">
+        <img src="img/cloud.png" id="cloud-2" class="cloud" data-value="3">
+        <img src="img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
+        <img src="img/cloud.png" id="cloud-4" class="cloud" data-value="4">
+        <img src="img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
     
     </div>
-    <a href="/index.html">
-        <img src="/img/exit.png">
+    <a href="index.php">
+        <img src="img/exit.png">
     </a>
     <div id="game">
 
@@ -39,7 +39,7 @@
             <a href="">
             <input type="button" value="SIGN IN" id="sign-in-btn">
             </a>
-            <a href="sign-up.html">
+            <a href="sign-up.php">
             <input type="button" value="CREATE NEW ACCOUNT" id="create-new-account-btn">
             </a>
         </form>
