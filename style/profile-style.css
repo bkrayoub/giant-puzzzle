@@ -1,0 +1,174 @@
+* {
+    cursor: url(/cursor/Unavailable.cur),pointer;
+    font-family: 'Luckiest Guy', cursive;
+}
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body>a img {
+    width: 80px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 4;
+
+
+}
+body>a img:hover {
+    filter: brightness(80%);
+    cursor: url(/cursor/Link\ Select.cur),pointer;
+
+}
+/* game viewport */
+#game {
+    background-image: url(/img/background.png);
+    background-size: cover;
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div:hover {
+    cursor: url(/cursor/Unavailable.cur),pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+p {
+    margin: 0;
+}
+
+
+#menu-form {
+    background-color: #F6F6F6;
+    height: 679.52px;
+    width: 587px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 3;
+    
+}
+#user-pfp {
+    background-color: #ffffff8c;
+    width: 246px;
+    height: 246px;
+    border-radius: 100%;
+    border: 14px solid #F6F6F6;
+    position: absolute;
+    top: 50px;
+
+}
+#user-pfp img {
+    width: 246px;
+    height: 246px;
+    border-radius: 100%;
+
+}
+#user-name>p {
+    margin-top: 100px;
+    color: #2C3761;
+    font-size: 32px;
+}
+#email>p {
+    color: #2C3761;
+    font-size: 32px;
+}
+#user-password>p {
+    color: #2C3761;
+    font-size: 32px;
+}
+
+#menu-form input {
+    font-family: 'Luckiest Guy', cursive;
+    border: 3px #555555 solid;
+    border-radius: 20px;
+    width: 455.61px;
+    height: 71.53px;
+    font-size: 40PX;
+}
+input[type=text]:hover{
+    cursor: url(/cursor/Text\ Select.cur),pointer;
+
+}
+
+input[type=text]::placeholder{
+    font-size: 25px;
+    color: #4a5a9980;
+    padding: 10px;
+}
+input[type=text]::placeholder:active{
+    color: transparent;
+}
+input[type=button]{
+    color: #FFF;
+    text-align: center;
+    background-color: #7793FE;
+}
+input[type=button]:hover{
+    cursor: url(/cursor/Link\ Select.cur),pointer;
+    background-color: #5D74C9;
+    
+
+}
+input[type=password]:hover {
+    cursor: url(/cursor/Text\ Select.cur),pointer;
+
+}
+input[type=password]::placeholder {
+    font-size: 25px;
+    color: #4a5a9980;
+    padding: 10px;
+}
+#menu-form input:hover {
+    transition: .33s;
+    
+}
+
+
+
+
+label input {
+    background-color: #F6F6F6;
+}
+
+/* clouds backgroun */
+
+#clouds img {
+    width: 314px;
+    position: absolute;
+}
+#cloud-1 {
+    right: 10%;
+    top: 10%;
+}
+#cloud-2 {
+    z-index: 4;
+    left: 20%;
+    top: 20%;
+}
+#cloud-3 {
+    right: 25%;
+    top: 35%;
+    z-index: 2;
+}
+#cloud-4 {
+bottom: 25%;
+left: 10%;
+}
+#cloud-5 {
+    bottom: 8%;
+    right: 21%;
+    z-index: 4;
+}
+/* END */
