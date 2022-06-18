@@ -1,4 +1,23 @@
 
+<?php
+include "connection.php";
+if (isset($_POST['submit'])){
+    $name =$_POST["user"];
+    $pass=$_POST["pass"];
+$sql = "SELECT * FROM player WHERE playername ='" . $name . "' AND  password ='" . $pass . "'" ;
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) == 1) {
+    header("location:index.php");
+
+}else{
+    echo "<script> alert ('your email adress or password is not correct')</script>";
+}
+
+}
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,19 +44,19 @@
     <div id="game">
 
 
-        <form action="" id="menu-form">
+        <form action="" id="menu-form" method="POST">
   
             <p id="title">Sign In/Up</p>
             <lable id="user-name">
                 <p>User Name</p>
-                <input type="text" placeholder="player Name"> 
+                <input type="text" placeholder="player Name" name="user"> 
             </lable>
             <lable id="user-password">
                 <p>Password</p>
-                <input type="password" placeholder="*********">
+                <input type="password" placeholder="*********" name="pass">
             </lable>
             <a href="">
-            <input type="button" value="SIGN IN" id="sign-in-btn">
+            <input type="submit" value="SIGN IN" id="sign-in-btn" name="submit">
             </a>
             <a href="sign-up.php">
             <input type="button" value="CREATE NEW ACCOUNT" id="create-new-account-btn">
@@ -58,5 +77,6 @@
             });
             }
     </script>
+
 </body>
 </html>

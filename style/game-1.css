@@ -190,3 +190,21 @@ body>a img:hover {
     background-color: rgb(119, 119, 119);
 }
 
+
+
+#color-purple {
+    background-color: #A887EC;
+}
+#color-red{ 
+    background-color: #ED506D;
+}
+#color-yellow{
+    background-color: #FFCB5A;
+}
+#color-green{
+    background-color: #99D06D;
+}
+#color-blue{
+    background-color: #4FBFEA;
+}
+
