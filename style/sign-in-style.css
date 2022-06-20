@@ -79,12 +79,18 @@ p {
     border-radius: 20px;
     width: 455.61px;
     height: 71.53px;
-    font-size: 40PX;
+    padding: 0px 10px;
 }
 input[type=text]:hover{
     cursor: url(../cursor/Text\ Select.cur),pointer;
 
+
 }
+input[type=text] , input[type=password]{
+
+    font-size: 25px;
+}
+
 input[type=password]::placeholder{
     font-size: 25px;
     color: #4a5a9980;
@@ -93,12 +99,25 @@ input[type=password]::placeholder{
 input[type=text]::placeholder{
     font-size: 25px;
     color: #4a5a9980;
-    padding: 10px;
+
 }
 input[type=text]::placeholder:active{
     color: transparent;
 }
+
+
+#sign-in-btn {
+    color: #FFF;
+    text-align: center;
+    background-color: #7793FE;
+    font-size: 35px;
+}
+#sign-in-btn:hover {
+    cursor: url(../cursor/Link\ Select.cur),pointer;
+    background-color: #5D74C9;
+}
 input[type=button]{
+    font-size: 35px;
     color: #FFF;
     text-align: center;
     background-color: #7793FE;
@@ -152,5 +171,8 @@ left: 10%;
     bottom: 8%;
     right: 21%;
     z-index: 4;
+}
+.sign-error{
+    border: 3px #d10000 solid;
 }
 /* END */

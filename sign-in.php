@@ -1,22 +1,5 @@
 
-<?php
-include "connection.php";
-if (isset($_POST['submit'])){
-    $name =$_POST["user"];
-    $pass=$_POST["pass"];
-$sql = "SELECT * FROM player WHERE playername ='" . $name . "' AND  password ='" . $pass . "'" ;
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) == 1) {
-    header("location:index.php");
-
-}else{
-    echo "<script> alert ('your email adress or password is not correct')</script>";
-}
-
-}
-
-?>
 
 <html lang="en">
 <head>
@@ -32,7 +15,7 @@ if (mysqli_num_rows($result) == 1) {
 <body>
     <div id="clouds">
         <img src="img/cloud.png" id="cloud-1" class="cloud" data-value="-5">
-        <img src="img/cloud.png" id="cloud-2" class="cloud" data-value="3">
+        <img src="img/cloud.png" id="cloud-2" class="cloud" data-value="3" onclick="cloud()">
         <img src="img/cloud-reverse.png" id="cloud-3" class="cloud" data-value="3">
         <img src="img/cloud.png" id="cloud-4" class="cloud" data-value="4">
         <img src="img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
@@ -48,8 +31,8 @@ if (mysqli_num_rows($result) == 1) {
   
             <p id="title">Sign In/Up</p>
             <lable id="user-name">
-                <p>User Name</p>
-                <input type="text" placeholder="player Name" name="user"> 
+                <p>UserName</p>
+                <input type="text" placeholder="player Name" name="user" id="gg"> 
             </lable>
             <lable id="user-password">
                 <p>Password</p>
@@ -64,6 +47,12 @@ if (mysqli_num_rows($result) == 1) {
         </form>
     </div>
     <script type="text/javascript">
+        // 
+
+
+
+
+        // 
         document.addEventListener("mousemove", parallax);
         function parallax(e){
             document.querySelectorAll(".cloud").forEach(function(move){
@@ -80,3 +69,42 @@ if (mysqli_num_rows($result) == 1) {
 
 </body>
 </html>
+<?php
+include "connection.php";
+if (isset($_POST['submit'])){
+    $name = $_POST["user"];
+    $pass = $_POST["pass"];
+    
+    $sql = "SELECT * FROM player WHERE playername ='" . $name . "' AND  password ='" . $pass . "'" ;
+    $result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) == 1) {
+    session_start();
+    $_SESSION['USER'] = $name;
+    $_SESSION['PASSWORD'] = $pass;
+    $_SESSION['LOGIN'] = true;
+
+    header("location:index.php");
+
+}
+else {
+    $_SESSION['LOGIN'] = false;
+    echo "<script> 
+    function signError(e){
+        e.style.border = '3px #d10000 solid'
+    }
+    function log(){
+        var in1 = document.querySelector('input[name=user]');
+        var in2 = document.querySelector('input[name=pass]');
+        
+        signError(in1);
+        signError(in2);
+    }
+    log()
+
+    </script>";
+}
+
+}
+
+?>

@@ -1,4 +1,6 @@
 
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,9 +28,20 @@
                 <a href="choose-game.php">
                     <input type="button" value="PLAY" style="margin-top: 130px;">
                 </a>
-                <a href="sign-in.php">
-                    <input type="button" value="ACCOUNT">
-                </a>                
+                <?php
+                session_start();
+                if(isset($_SESSION['LOGIN']) && isset($_SESSION['USER']) && isset($_SESSION['PASSWORD'])){
+                    echo '<a href="profile.php" id="id-profile">
+                    <input type="button" value="profile" id="profile" onclick="cnx()" name="connection">
+                </a>';
+                }
+                else {
+                    echo '<a href="sign-in.php" id="id-profile">
+                    <input type="button" value="connection" id="profile" onclick="cnx()" name="connection">
+                </a>';
+                }
+
+                ?>               
                 <a href="scoreboard.php">
                     <input type="button" value="SCOREBOARD">
                 </a>
@@ -38,10 +51,10 @@
                 <a href="credit.php">
                     <input type="button" value="CREDIT">
                 </a>
-
         </form>
     </div>
     <script type="text/javascript">
+
         document.addEventListener("mousemove", parallax);
         function parallax(e){
             document.querySelectorAll(".cloud").forEach(function(move){
@@ -51,9 +64,33 @@
                 var y = (e.clientY * moving_value) / 150;
 
                 move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+                
             
             });
-            }
+        }
     </script>
 </body>
 </html>
+
+
+<?php
+
+
+    $login = $_SESSION['LOGIN'];
+
+
+    // echo "<script> 
+    //  document.getElementById('profile').value = 'profile';
+    // </script>";
+    //     echo "<script> 
+    //     document.getElementById('profile').value = 'connection';
+    //    </script>";
+
+
+
+    $cnx_result = '';
+    if($login === 1){
+        $cnx_result ='#';
+    }
+
+?>

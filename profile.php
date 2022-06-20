@@ -19,17 +19,18 @@
         <img src="img/cloud-reverse.png" id="cloud-5" class="cloud" data-value="2">
     
     </div>
-    <a href="sign-in.php">
+    <a href="index.php">
         <img src="img/exit.png">
     </a>
     <div id="game">
 
 
-        <form action="" id="menu-form">
+        <form action="" id="menu-form" method="POST">
   
             <div id="user-pfp">
                 <img src="img/pfp.png" alt="">
             </div>
+            <input type="button" value="Log out" name="logout">
         
             
         </form>
@@ -50,3 +51,14 @@
     </script>
 </body>
 </html>
+
+
+
+<?php
+include "connection.php";
+
+if(isset($_POST["logout"]))
+echo 'hy babe';
+
+
+?>

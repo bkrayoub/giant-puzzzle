@@ -25,7 +25,7 @@
     <div id="game">
 
 
-        <form action="" id="menu-form">
+        <form method="POST" id="menu-form" actoin="">
   
             <div id="user-pfp">
                 <img src="img/pfp.png" alt="">
@@ -44,7 +44,7 @@
                 <input type="password" placeholder="*********" name="password">
             </lable>
             <a href="">
-                <input type="button" value="Regester" id="create-new-account-btn" name="">
+                <input type="submit" value="Regester" id="create-new-account-btn" name="submit">
             </a>
         </form>
     </div>
@@ -64,3 +64,58 @@
     </script>
 </body>
 </html>
+<?php include 'connection.php'?>
+
+<?php
+
+// validation sign in 
+    if(isset($_POST["submit"])){
+
+        $userName = $_POST["userName"];
+
+        $email = $_POST["email"];
+
+        $pass = $_POST["password"];
+
+        $sql = "INSERT INTO `player` (`playername`, `email`, `password`) VALUES ('$userName', '$email', '$pass')";
+        $result = mysqli_query($conn,$sql);
+
+        if($result){
+            echo "
+                <script>
+                    alert('hi')
+                </script>
+            ";
+        }
+
+        // validation_inputs
+
+        // if(!preg_match('/[a-zA-Z]{3,25}/', $userName)){
+        //     $err_username = "first name must be 3 or more characters";
+        //     $err_valid++;
+        // }
+
+        // if(!preg_match('/([a-zA-Z0-9]{4,})@gmail\.com/', $email)){
+        //     $err_email = "invalid email";
+        //     $err_valid++;
+        // }
+
+        // if(!preg_match('/[a-zA-Z0-9]{8,}/', $pass)){
+        //     $err_pass = "password must be 8 or more characters";
+        //     $err_valid++;
+        // }
+
+        // if($confirm_pass != $pass){
+        //     $err_confirm_pass = "doesn't match the password!";
+        //     $err_valid++;
+        // }
+
+        // insert into database 
+
+            
+
+
+
+    }   
+
+?>
