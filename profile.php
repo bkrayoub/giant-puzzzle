@@ -30,7 +30,8 @@
             <div id="user-pfp">
                 <img src="img/pfp.png" alt="">
             </div>
-            <input type="button" value="Log out" name="logout">
+            <input type="submit" value="Log out" name="logout">
+            <input type="submit" value="delet account" onclick="return confirm('You about to delete your account! are you sure?')" name="delete">
         
             
         </form>
@@ -56,9 +57,27 @@
 
 <?php
 include "connection.php";
+session_start();
 
-if(isset($_POST["logout"]))
-echo 'hy babe';
+
+
+$user_id = $_SESSION['ID'];
+
+
+if(isset($_POST['delete'])){
+    $sql = "DELETE FROM `player` WHERE player_id = $user_id ";
+    $result = mysqli_query($conn,$sql);
+    session_unset();
+    session_destroy();
+    header("location:index.php");
+}
+
+if(isset($_POST["logout"])){
+    session_unset();
+    session_destroy();
+    header("location:index.php");
+}
+
 
 
 ?>

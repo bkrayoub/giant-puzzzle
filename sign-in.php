@@ -80,8 +80,9 @@ if (isset($_POST['submit'])){
 
 if (mysqli_num_rows($result) == 1) {
     session_start();
-    $_SESSION['USER'] = $name;
-    $_SESSION['PASSWORD'] = $pass;
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION['ID'] = $row["player_id"];
+    $_SESSION['USER'] = $row["playername"];
     $_SESSION['LOGIN'] = true;
 
     header("location:index.php");

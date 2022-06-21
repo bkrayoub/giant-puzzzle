@@ -30,7 +30,7 @@
                 </a>
                 <?php
                 session_start();
-                if(isset($_SESSION['LOGIN']) && isset($_SESSION['USER']) && isset($_SESSION['PASSWORD'])){
+                if(isset($_SESSION['USER']) && isset($_SESSION['ID'])){
                     echo '<a href="profile.php" id="id-profile">
                     <input type="button" value="profile" id="profile" onclick="cnx()" name="connection">
                 </a>';
@@ -76,7 +76,7 @@
 <?php
 
 
-    $login = $_SESSION['LOGIN'];
+
 
 
     // echo "<script> 
@@ -88,9 +88,6 @@
 
 
 
-    $cnx_result = '';
-    if($login === 1){
-        $cnx_result ='#';
-    }
+
 
 ?>

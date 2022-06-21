@@ -1,7 +1,14 @@
 
 <?php
-    $phpconnect = mysqli_connect("localhost","root","","giant_puzzle");
- 
+ include 'connection.php';
+
+
+ $sql = "SELECT * FROM level";
+ $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result)){
+        
+    }
+
 ?>
 <html lang="en">
 <head>
@@ -30,12 +37,24 @@
         <section>
             <p>Pick a game</p>
             <form>
+
+            <?php
+                 $sql = "SELECT * FROM level";
+                 $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        
+                    
+            ?>
                 <div>
                     <div class="avilable-game">
-                        <a href="game1.php"><img src="img/levels_banner/25-num-color.png"></a>
+                        <a href="game1.php"><img src="img/levels_banner/<?php echo $row['photo'];?>"></a>
                     </div>
-                    <p>25 num & color</p>
+                    <p><?php echo $row['name']; ?></p>
                 </div>
+
+<?php
+                    }
+?>
                 <div>
                     <div class="levels">
                         <img src="img/levels_banner/locked.jpg">
@@ -47,8 +66,6 @@
                     </div>
                     <p>Coming soon</p>
                 </div>
-
-
             </form>
         </section>
     </div>
@@ -68,3 +85,8 @@
     </script>
 </body>
 </html>
+<?php
+
+
+            
+?>

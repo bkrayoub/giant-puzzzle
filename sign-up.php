@@ -77,40 +77,66 @@
 
         $pass = $_POST["password"];
 
-        $sql = "INSERT INTO `player` (`playername`, `email`, `password`) VALUES ('$userName', '$email', '$pass')";
-        $result = mysqli_query($conn,$sql);
 
-        if($result){
-            echo "
-                <script>
-                    alert('hi')
-                </script>
-            ";
+
+        $error_found = 0;
+        // VALIDATION INPUTS
+
+        if(!preg_match('/[a-zA-Z]{3,25}/', $userName)){
+            $error_found++;
         }
 
-        // validation_inputs
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            
+        }
+        else {
+            $error_found++;
+        }
 
-        // if(!preg_match('/[a-zA-Z]{3,25}/', $userName)){
-        //     $err_username = "first name must be 3 or more characters";
-        //     $err_valid++;
-        // }
+        if(!preg_match('/[a-zA-Z0-9]{8,}/', $pass)){
+            $error_found++;
 
-        // if(!preg_match('/([a-zA-Z0-9]{4,})@gmail\.com/', $email)){
-        //     $err_email = "invalid email";
-        //     $err_valid++;
-        // }
+        }
 
-        // if(!preg_match('/[a-zA-Z0-9]{8,}/', $pass)){
-        //     $err_pass = "password must be 8 or more characters";
-        //     $err_valid++;
-        // }
+        // INSERT INTO DATABASE
 
-        // if($confirm_pass != $pass){
-        //     $err_confirm_pass = "doesn't match the password!";
-        //     $err_valid++;
-        // }
+        $sql_valid = "SELECT * FROM player WHERE playername = '$userName' AND email = '$email'";
+        $result_valid = mysqli_query($conn, $sql_valid);
 
-        // insert into database 
+        if (mysqli_num_rows($result_valid) == 0) {
+
+            if($error_found == 0){
+
+                $sql = "INSERT INTO `player` (`playername`, `email`, `password`) VALUES ('$userName', '$email', '$pass')";
+                $result = mysqli_query($conn,$sql);
+
+                if($result){
+                    header("location:sign-in.php");
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+
 
             
 
