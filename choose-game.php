@@ -54,6 +54,11 @@
 
 <?php
                     }
+                    $numrow = mysqli_num_rows($result); 
+                    
+                    for($i=1; $i<13-$numrow; $i++){
+                        
+                                        
 ?>
                 <div>
                     <div class="levels">
@@ -61,11 +66,13 @@
                         <div class="hover-show">
                             <img src="img/levels_banner/locked-hovering.png" id="hovering-img">
                             <p>game locked</p>
-                        </div>
-                        
+                        </div>   
                     </div>
                     <p>Coming soon</p>
                 </div>
+                <?php
+                }
+                ?>
             </form>
         </section>
     </div>

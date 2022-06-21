@@ -59,7 +59,7 @@ p {
     z-index: 3;
     
 }
-#menu-form>div {
+#menu-form>#user-pfp {
     background-color: #ffffff8c;
     width: 246px;
     height: 246px;
@@ -111,12 +111,12 @@ input[type=submit]{
     color: #FFF;
     text-align: center;
     background-color: #7793FE;
+    width: 250px !important;
+    font-size: 30px !important;
 }
 input[type=submit]:hover{
     cursor: url(../cursor/Link\ Select.cur),pointer;
     background-color: #5D74C9;
-    
-
 }
 input[type=password]:hover {
     cursor: url(../cursor/Text\ Select.cur),pointer;
@@ -126,6 +126,12 @@ input[type=password]::placeholder {
     font-size: 25px;
     color: #4a5a9980;
     padding: 10px;
+}
+#delete-btn {
+    background-color: #fe7777;
+}
+#delete-btn:hover {
+    background-color: #cc6060;
 }
 #menu-form input:hover {
     transition: .33s;
@@ -167,5 +173,41 @@ left: 10%;
     bottom: 8%;
     right: 21%;
     z-index: 4;
+}
+#banner {
+    padding-top: 100px;
+    text-align: center;
+}
+#userTitle {
+    font-size: 50px;
+    margin: 0;
+}
+#uid {
+    margin: 0;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#copy {
+    margin-left: 10px;
+    border-radius: 0% !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+#copy:hover {
+    cursor: url(../cursor/Link\ Select.cur),pointer;
+
+}
+#info {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 450px;
+    height: 205px;
+    border-radius: 20px;
+    border: 3px solid #555555;
 }
 /* END */

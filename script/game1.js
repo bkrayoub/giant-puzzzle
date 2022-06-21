@@ -1,4 +1,4 @@
-
+    // game start event
 // timer
 let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
 let timerRef = document.querySelector('.timerDisplay');
@@ -9,6 +9,7 @@ document.getElementById('startTimer').addEventListener('click', ()=>{
     if(int!==null){
         clearInterval(int);
     }
+    gameStart = true;
     int = setInterval(displayTimer,10);
     document.getElementById('resetTimer').removeAttribute('disabled')
 
@@ -18,6 +19,7 @@ document.getElementById('resetTimer').addEventListener('click', ()=>{
     clearInterval(int);
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
     timerRef.innerHTML = '00 : 00 : 00 : 000 ';
+    gameStart = false
 });
 
 function displayTimer(){
@@ -41,4 +43,11 @@ let s = seconds < 10 ? "0" + seconds : seconds;
 let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
 timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+
+// gameplay script
+
+
+// 
+
+
 }

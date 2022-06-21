@@ -13,6 +13,7 @@ body {
     display: none;
 }
 #selected-tile>input {
+    font-size: 40px;
     border: 0px;
     position: absolute;
     width: 103px;
@@ -53,6 +54,7 @@ body {
     flex-wrap: wrap;
 }
 #suduko-section input {
+    font-size: 40px;
     cursor: url(../cursor/Link\ Select.cur),pointer;
     width: 20%;
     height: 20%;
@@ -191,20 +193,54 @@ body>a img:hover {
 }
 
 
-
+#color-tiles input {
+    background-size: cover;
+}
 #color-purple {
-    background-color: #A887EC;
+    background-image: url(../img/tiles/purpel.png);
 }
 #color-red{ 
-    background-color: #ED506D;
+    background-image: url(../img/tiles/red.png);
+
 }
 #color-yellow{
-    background-color: #FFCB5A;
+    background-image: url(../img/tiles/yellow.png);
+
 }
 #color-green{
-    background-color: #99D06D;
+    background-image: url(../img/tiles/green.png);
+
 }
 #color-blue{
-    background-color: #4FBFEA;
+    background-image: url(../img/tiles/blue.png);
+
+}
+#pfp {
+    
+    position: absolute;
+    width: 87px;
+    height: 87px;
+    left: 1644px;
+    top: 85px;
+    border-radius: 100%;
+    background: url(tl (44).png), rgba(255, 255, 255, 0.7)
+}
+#username {
+    position: absolute;
+    width: 213px;
+    height: 76px;
+    left: 1420px;
+    top: 55px;
+
+    font-family: 'Luckiest Guy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF; 
 }
 
