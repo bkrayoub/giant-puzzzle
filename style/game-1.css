@@ -225,6 +225,47 @@ body>a img:hover {
     border-radius: 100%;
     background: url(tl (44).png), rgba(255, 255, 255, 0.7)
 }
+#howToPlay-content {
+    position: absolute;
+    width: 1295px;
+    height: 142px;
+    left: 323px;
+    top: 907px;
+    background: #F6F6F6;
+    border-radius: 20px;
+}
+
+#howToPlay-content p {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+#howToPlay>p {
+    position: absolute;
+    width: 285px;
+    height: 76px;
+    left: 822px;
+    top: 795px;
+    font-family: 'Luckiest Guy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+#notConnect {
+    position: absolute;
+    width: 87px;
+    height: 87px;
+    left: 1644px;
+    top: 85px;
+    background: url(tl (44).png), rgba(255, 255, 255, 0.7)
+}
 #username {
     position: absolute;
     width: 213px;

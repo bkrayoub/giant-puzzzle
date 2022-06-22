@@ -25,6 +25,7 @@ body>a img:hover {
     cursor: url(../cursor/Link\ Select.cur),pointer;
 
 }
+
 /* game viewport */
 #game {
     background-image: url(../img/background.png);
@@ -171,4 +172,5 @@ left: 10%;
     right: 21%;
     z-index: 4;
 }
+
 /* END */

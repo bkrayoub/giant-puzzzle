@@ -1,4 +1,13 @@
+<?php 
+    session_start();
+    // get sessions
+    
+    // create user informaitions variables
+    $user_id = $_SESSION['ID'];
+    $user_name = $_SESSION['USER'];
+    $user_email = $_SESSION['EMAIL'];
 
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -31,12 +40,12 @@
                     <img src="img/pfp.png" alt="">
                 </div>
                 <div id="banner">
-                    <p id="userTitle">folan</p>
-                    <p id="uid">user id: 2424 <span><img src="img/copy.png" id="copy"></span> </p>
+                    <p id="userTitle"><?php echo $user_name ?></p>
+                    <p id="uid">user id: <input type="button" value="<?php echo $user_id;?>" id="uesr_id" disabled><img src="img/copy.png" id="copy"></span> </p>
 
                 </div>
                 <div id="info">
-                    <p id="email">ayoubboukkour@gmail.com</p>
+                    <p id="email"><?php echo $user_email; ?></p>
                     <p id="games">games: 13</p>
                 </div>
                 <div id="btns">
@@ -48,6 +57,10 @@
             </form>
         </div>
         <script type="text/javascript">
+            function copyId(){
+                var copy_id = document.getElementById('uesr_id')
+                navigator.clipboard.writeText(copy_id.value);
+            }
             document.addEventListener("mousemove", parallax);
             function parallax(e){
                 document.querySelectorAll(".cloud").forEach(function(move){
@@ -68,12 +81,11 @@
     
     <?php
     include "connection.php";
-    session_start();
+
     
     
     
-    $user_id = $_SESSION['ID'];
-    
+
     
     if(isset($_POST['delete'])){
         $sql = "DELETE FROM `player` WHERE player_id = $user_id ";

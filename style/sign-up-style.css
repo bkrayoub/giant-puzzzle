@@ -189,6 +189,16 @@ left: 10%;
     justify-content: center;
     align-items: center;
 }
+#uesr_id{
+    width: 50px !important;
+    height: 40px !important;
+    border-radius: 0% !important;
+    border: 0px !important;
+    color: #000;
+    font-size: 30px !important;
+
+
+}
 #copy {
     margin-left: 10px;
     border-radius: 0% !important;

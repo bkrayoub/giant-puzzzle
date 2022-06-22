@@ -28,7 +28,6 @@
 
 
         <form action="" id="menu-form" method="POST">
-  
             <p id="title">Sign In/Up</p>
             <lable id="user-name">
                 <p>UserName</p>
@@ -75,7 +74,7 @@ if (isset($_POST['submit'])){
     $name = $_POST["user"];
     $pass = $_POST["pass"];
     
-    $sql = "SELECT * FROM player WHERE playername ='" . $name . "' AND  password ='" . $pass . "'" ;
+    $sql = "SELECT * FROM player WHERE  playername ='" . $name . "' AND  password ='" . $pass . "'" ;
     $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 1) {
@@ -83,6 +82,8 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     $_SESSION['ID'] = $row["player_id"];
     $_SESSION['USER'] = $row["playername"];
+    $_SESSION['EMAIL'] = $row["email"];
+    
     $_SESSION['LOGIN'] = true;
 
     header("location:index.php");
