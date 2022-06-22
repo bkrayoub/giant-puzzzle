@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(5, 100px);
+            justify-content: center;
+            background-color: bisque;
+        }
+        .container input {
+            font-size: 50px;
+            text-align: center;
+        }
+        input[type=button]{
+            background-color: aquamarine;
+            height: 70px;
+            width: 150px;
+            font-size: 30px;
+            margin: 10px;
+        }
+        input[type=button]:hover {
+            background-color: rgb(175, 255, 228);
+        }
+        input[type=button]:active {
+            background-color: rgb(87, 172, 144);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="in1">
+        <input type="text" id="in2">
+        <input type="text" id="in3">
+        <input type="text" id="in4">
+        <input type="text" id="in5">
+        <input type="text" id="in6">
+        <input type="text" id="in7">
+        <input type="text" id="in8">
+        <input type="text" id="in9">
+        <input type="text" id="in10">
+        <input type="text" id="in11">
+        <input type="text" id="in12">
+        <input type="text" id="in13">
+        <input type="text" id="in14">
+        <input type="text" id="in15">
+        <input type="text" id="in16">
+        <input type="text" id="in17">
+        <input type="text" id="in18">
+        <input type="text" id="in19">
+        <input type="text" id="in20">
+        <input type="text" id="in21">
+        <input type="text" id="in22">
+        <input type="text" id="in23">
+        <input type="text" id="in24">
+        <input type="text" id="in25">
+    </div>
+    <input type="button" value="Try" onclick="btn()">
+    <input type="button" value="fill" onclick="fill()">
+
+    <script type="text/javascript">
+
+        var inputs = document.querySelectorAll(".container input");
+
+        function fill(){
+            for(i=0 ; i<25 ; i++){
+                inputs[i].value = i;
+            }
+        }
+        var errFound = 0;
+
+        function btn(){
+            // var take error for validate
+            errFound = 0;
+
+            // test input 1
+            if(inputs[0].value == inputs[1].value || inputs[0].value == inputs[2].value || inputs[0].value == inputs[3].value || inputs[0].value == inputs[4].value || inputs[0].value == inputs[5].value || inputs[0].value == inputs[6].value || inputs[0].value == inputs[10].value || inputs[0].value == inputs[12].value || inputs[0].value == inputs[15].value || inputs[0].value == inputs[18].value || inputs[0].value == inputs[20].value || inputs[0].value == inputs[24].value){
+                errFound++
+            }
+
+            // test input 2
+            if(inputs[1].value == inputs[0].value || inputs[1].value == inputs[2].value || inputs[1].value == inputs[3].value || inputs[1].value == inputs[4].value || inputs[1].value == inputs[5].value || inputs[1].value == inputs[6].value || inputs[1].value == inputs[7].value || inputs[1].value == inputs[11].value || inputs[1].value == inputs[13].value || inputs[1].value == inputs[16].value || inputs[1].value == inputs[19].value || inputs[1].value == inputs[21].value){
+                errFound++
+            }
+
+            // test input 3
+            if(inputs[2].value == inputs[0].value || inputs[2].value == inputs[1].value || inputs[2].value == inputs[3].value || inputs[2].value == inputs[4].value || inputs[2].value == inputs[6].value || inputs[2].value == inputs[7].value || inputs[2].value == inputs[8].value || inputs[2].value == inputs[10].value || inputs[2].value == inputs[12].value || inputs[2].value == inputs[14].value || inputs[2].value == inputs[17].value || inputs[2].value == inputs[22].value){
+                errFound++
+            }
+
+            // test input 4
+            if(inputs[3].value == inputs[0].value || inputs[3].value == inputs[1].value || inputs[3].value == inputs[2].value || inputs[3].value == inputs[4].value || inputs[3].value == inputs[7].value || inputs[3].value == inputs[8].value || inputs[3].value == inputs[9].value || inputs[3].value == inputs[11].value || inputs[3].value == inputs[13].value || inputs[3].value == inputs[15].value || inputs[3].value == inputs[18].value || inputs[3].value == inputs[23].value){
+                errFound++
+            }
+
+            // test input 5
+            if(inputs[4].value == inputs[0].value || inputs[4].value == inputs[1].value || inputs[4].value == inputs[2].value || inputs[4].value == inputs[3].value || inputs[4].value == inputs[8].value || inputs[4].value == inputs[9].value || inputs[4].value == inputs[12].value || inputs[4].value == inputs[14].value || inputs[4].value == inputs[16].value || inputs[4].value == inputs[19].value || inputs[4].value == inputs[20].value || inputs[4].value == inputs[24].value){
+                errFound++
+            }
+
+            // test input 6
+            if(inputs[5].value == inputs[1].value || inputs[5].value == inputs[6].value || inputs[5].value == inputs[7].value || inputs[5].value == inputs[8].value || inputs[5].value == inputs[9].value || inputs[5].value == inputs[10].value || inputs[5].value == inputs[11].value || inputs[5].value == inputs[15].value || inputs[5].value == inputs[17].value || inputs[5].value == inputs[20].value || inputs[5].value == inputs[23].value || inputs[5].value == inputs[0].value){
+                    errFound++
+                }
+
+            // test input 7
+            if(inputs[6].value == inputs[0].value || inputs[6].value == inputs[1].value || inputs[6].value == inputs[2].value || inputs[6].value == inputs[5].value || inputs[6].value == inputs[7].value || inputs[6].value == inputs[8].value || inputs[6].value == inputs[9].value || inputs[6].value == inputs[10].value || inputs[6].value == inputs[11].value || inputs[6].value == inputs[12].value || inputs[6].value == inputs[16].value || inputs[6].value == inputs[18].value || inputs[6].value == inputs[21].value || inputs[6].value == inputs[23].value){
+                errFound++
+            }
+            // test input 8
+            if(inputs[7].value == inputs[1].value || inputs[7].value == inputs[2].value || inputs[7].value == inputs[3].value || inputs[7].value == inputs[5].value || inputs[7].value == inputs[6].value || inputs[7].value == inputs[8].value || inputs[7].value == inputs[9].value || inputs[7].value == inputs[11].value || inputs[7].value == inputs[12].value || inputs[7].value == inputs[13].value || inputs[7].value == inputs[15].value || inputs[7].value == inputs[17].value || inputs[7].value == inputs[19].value || inputs[7].value == inputs[22].value){
+                errFound++
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>
