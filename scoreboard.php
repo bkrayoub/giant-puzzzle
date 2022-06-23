@@ -39,6 +39,13 @@
     </div>
 
     <div id="container">
+    <div id="rank-box1">
+            <p>Profile photo</p>
+            <p id="userID">UID</p>
+            <p id="username">User name</p>
+            <p id="time-spent">Time spent</p>
+            <p id="rank">Rank</p>
+        </div>
         <?php 
         $i = 1;
         while($row = mysqli_fetch_assoc($result)){
