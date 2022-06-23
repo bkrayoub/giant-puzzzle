@@ -216,6 +216,10 @@ include 'connection.php';
                 if(confirm('you want exit the party?')){
                     window.location.href='choose-game.php'
                 }
+                else{
+                    gameStart = true;
+
+                }
             }
             // call numbers inputs
             var n1 = document.getElementById('num-1'); 

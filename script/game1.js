@@ -188,6 +188,8 @@ function testVal(){
 
      if(errFound == 0){
         alert('you won!')
+        var confirmFoem = document.getElementById('popup');
+        confirmFoem.style.top = '50%'
         break
        }
    }
