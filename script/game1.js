@@ -1,4 +1,4 @@
-    // game start event
+// game start event
 // timer
 let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
 let timerRef = document.querySelector('.timerDisplay');
@@ -16,10 +16,16 @@ document.getElementById('startTimer').addEventListener('click', ()=>{
 });
 
 document.getElementById('resetTimer').addEventListener('click', ()=>{
-    clearInterval(int);
-    [milliseconds,seconds,minutes,hours] = [0,0,0,0];
-    timerRef.innerHTML = '00 : 00 : 00 : 000 ';
-    gameStart = false
+    if(confirm('you want to stop the game? click cancel if you want to continue') === true){
+        clearInterval(int);
+        [milliseconds,seconds,minutes,hours] = [0,0,0,0];
+        timerRef.innerHTML = '00 : 00 : 00 : 000 ';
+        gameStart = false
+    }
+    else{
+        console.log("unconfirmed")
+    }
+
 });
 
 function displayTimer(){
@@ -44,10 +50,11 @@ let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + mi
 
 timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
 
-// gameplay script
+
 
 
 // 
 
 
 }
+// gameplay script

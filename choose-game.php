@@ -47,7 +47,7 @@
             ?>
                 <div>
                     <div class="avilable-game">
-                        <a href="game1.php"><img src="img/levels_banner/<?php echo $row['photo'];?>"></a>
+                        <a href="game1.php?level=<?php echo $row['level_id']?>"><img src="img/levels_banner/<?php echo $row['photo'];?>"></a>
                     </div>
                     <p><?php echo $row['name']; ?></p>
                 </div>

@@ -1,8 +1,9 @@
 
 <?php
+include 'connection.php';
     $phpconnect = mysqli_connect("localhost","root","","giant_puzzle");
     session_start();
-    
+    $userId = $_SESSION['ID'];
 ?>
 <html lang="en">
 <head>
@@ -16,8 +17,26 @@
     <title>Giant Puzzle | 25 num & color</title>
 </head>
 <body>
+    <form method="POST">
+        <p>you want to save this game?</p>
+        <span>Your time spent is:</span><input type="text" id="recopy_time" name="timeSpent">
+        <div>
+        <input type="submit" value="SAVE" name="save">
+        <input type="button" value="cancel" onclick="cancelSavine()">
+        </div>
+    </form>
+    <?php
 
-    <a href="index.php">
+     if(isset($_POST['save'])){
+        $dateTime = date('Y-m-d H:i:s');
+        $leveId = $_GET['level'];
+        $timeSpent = $_POST['timeSpent'];
+        $sql_score = "INSERT INTO `score` (`player_id`, `level_id`, `date`, `time_spent`) VALUES ($userId, $leveId, '$dateTime', '$timeSpent')";
+        mysqli_query($conn, $sql_score);
+
+    } ?>
+    <div id="lastRecord"><span>your last recored time is : <input type="button" value="" id="timeSpent"></span></div>
+    <a onclick="backToMenu()">
         <img src="img/exit.png" alt="go back" id="go-back">
     </a>
     <p id="username"><?php if(isset($_SESSION['USER'])){echo $_SESSION['USER'];} else {echo "you're not connected";}; ?></p>
@@ -102,14 +121,18 @@
     gameStart = false;
     var inps = document.querySelectorAll('.inps')
     function endGame(){
+        document.getElementById('timeSpent').value = [seconds,minutes,hours]
+        document.getElementById('recopy_time').value = [seconds,minutes,hours]
         alert([seconds,minutes,hours])
         gameStart = false;
 
         for(i=0; i<=inps.length; i++){
             inps[i].value = '';
-            inps[i].style.backgroundImage = ''
+            inps[i].style.backgroundImage = '';
             inps[i].style.backgroundSize = emptyTile.style.backgroundSize;
-            inps[i].style.boxShadow = '0px 0px 36px -1px rgba(255, 0, 0, 0.46), inset 0px 0px 13px 2px rgba(0, 0, 0, 0.84);'
+            emptyTile.value = '';
+            emptyTile.style.backgroundImage = '';
+            emptyTile.style.backgroundSize = emptyTile.style.backgroundSize;
         }
     }
 
@@ -121,9 +144,14 @@
 
         }
     }
-
-                 // call numbers inputs
-                 var n1 = document.getElementById('num-1'); 
+            // exit the game btn 
+            function backToMenu() {
+                if(confirm('you want exit the party?')){
+                    window.location.href='choose-game.php'
+                }
+            }
+            // call numbers inputs
+            var n1 = document.getElementById('num-1'); 
             var n2 = document.getElementById('num-2'); 
             var n3 = document.getElementById('num-3'); 
             var n4 = document.getElementById('num-4'); 
@@ -207,12 +235,11 @@
             });
 
                             // recopy to main game table
-                            function tile(e){
+            function tile(e){
                 if(!(numValid === 0 && colorValid === 0)){
                     e.value = emptyTile.value
                     e.style.backgroundImage = emptyTile.style.backgroundImage;
                     e.style.backgroundSize = emptyTile.style.backgroundSize;
-                    e.style.boxShadow = '0px 0px 0px'
 
                 }
     

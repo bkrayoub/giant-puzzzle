@@ -44,6 +44,7 @@ div:hover {
 }
 p {
     margin: 0;
+    
 }
 
 
@@ -80,9 +81,10 @@ p {
     color: #2C3761;
     font-size: 32px;
 }
-#email>p {
-    color: #2C3761;
-    font-size: 32px;
+#email {
+    font-size: 20px !important;
+    width: 411px !important;
+    word-wrap: break-word !important;
 }
 #user-password>p {
     color: #2C3761;

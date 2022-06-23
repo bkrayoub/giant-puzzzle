@@ -1,7 +1,12 @@
 
 <?php
-    $phpconnect = mysqli_connect("localhost","root","","giant_puzzle");
- 
+   include 'connection.php';
+   session_start();
+
+   $sql = "SELECT score.player_id, player.playername, score.time_spent FROM score INNER JOIN player ON score.player_id = player.player_id ORDER BY score.time_spent  ASC" ;
+   $result = mysqli_query($conn, $sql);
+    
+
 ?>
 <html lang="en">
 <head>
@@ -34,82 +39,29 @@
     </div>
 
     <div id="container">
+        <?php 
+        $i = 1;
+        while($row = mysqli_fetch_assoc($result)){
+            
+        ?>
+        <div id="rank-box">
+            <div id="rank-img">
+                <img src="img/pfp.png">
+            </div>
+            <p id="userID"><?php echo $row['player_id']?></p>
+            <p id="username"><?php echo $row['playername']?></p>
+            <p id="time-spent"><?php echo $row['time_spent']?></p>
+            <p id="rank"><?php echo $i++; ?></p>
+        </div>
+
         
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
+        <?php } ?>
         
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
-        
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
-        
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
-        <div id="rank-box">
-            <div id="rank-img">
-                <img src="img/pfp.png">
-            </div>
-            <p id="userID">USER ID</p>
-            <p id="username">USER NAME</p>
-            <p id="time-spent">00:15:04</p>
-            <p id="rank">1</p>
-        </div>
     </div>
+        
+
+        
+
 
 
 
