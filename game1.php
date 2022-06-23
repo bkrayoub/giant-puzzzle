@@ -137,7 +137,7 @@ if(isset($_SESSION['USER'])){
     <div id="suduko-info">
         <img src="img/large-logo.png" alt="">
         <div id="selected-tile">
-            <input type="button" value="" id="empty-tile">
+            <input type="button" value="" id="empty-tile" onclick="clearOnes()">
         </div>
         <div id="timer">
             <div id="stopwatch">
@@ -199,6 +199,7 @@ if(isset($_SESSION['USER'])){
     // BUTTON WHO END THE GAME PARTY
     function endGame(){
         // DISPLAY POPUP
+        alert([milliseconds,seconds,minutes,hours])
         var confirmFoem = document.getElementById('popup');
         confirmFoem.style.top = '50%'
 
@@ -216,6 +217,12 @@ if(isset($_SESSION['USER'])){
             emptyTile.style.backgroundImage = '';
             emptyTile.style.backgroundSize = emptyTile.style.backgroundSize;
         }
+    }
+    // CLEAR THE CHARGER TILE
+    function clearOnes(){
+        emptyTile.value = '';
+            emptyTile.style.backgroundImage = '';
+            emptyTile.style.backgroundSize = emptyTile.style.backgroundSize;
     }
 
     // BUTTON START GAME
