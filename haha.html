@@ -5,36 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="game-1.css">
 </head>
 <body>
+    <div>hahaakjhdakjsdhkahdk</div>
     <style>
         body {
-            margin: 0;
-            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
         }
-        form {
-            background-color: aquamarine;
-            height: 300px;
-            width: 200px;
+        #popup {
+            transition: .33s ease-out;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #F6F6F6;
+            border-radius: 20px;
+            box-shadow: 0px 0px 36px -1px rgba(53, 53, 53, 0.46);
             position: absolute;
-            left: 400px;
-            top: 200px;
-            display: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 25px;
+            width: 700px;
+            height: 400px;
+            
+
+        }
+        #popup input {
+            border: 0px;
+        }
+        #popup input[type=text]{
+            background-color: transparent;
+            font-size: 25px;
+            text-align: center;
+        }
+        #popup input[type=button]{
+            background-color: brown;
+            height: 50px;
+            width: 120px;
+            border-radius: 20px;
+        }
+        #popup input[type=submit]{
+            background-color: rgb(88, 232, 72);
+            height: 50px;
+            width: 120px;
+            border-radius: 20px;
         }
     </style>
-    <button onclick="resetGame()">rest</button>
-    <form method="POST">
+    <input type="button" value="pop up" onclick="popup()">
+    <form method="POST" id="popup">
+        <span>Your time spent is:</span><input type="text" id="recopy_time" name="timeSpent">
         <p>you want to save this game?</p>
-        <input type="button">
         <div>
         <input type="submit" value="SAVE" name="save">
         <input type="button" value="cancel" onclick="cancelSavine()">
         </div>
     </form>
     <script>
-        var form = document.querySelector('')
-        function resetGame(){
-
+        function popup() {
+            var confirmFoem = document.getElementById('popup');
+            confirmFoem.style.top = '50%'
         }
     </script>
 </body>

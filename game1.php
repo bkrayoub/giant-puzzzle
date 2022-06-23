@@ -3,7 +3,9 @@
 include 'connection.php';
     $phpconnect = mysqli_connect("localhost","root","","giant_puzzle");
     session_start();
-    $userId = $_SESSION['ID'];
+    if(isset($_SESSION['USER'])){
+        $userId = $_SESSION['ID'];
+    }
 ?>
 <html lang="en">
 <head>
@@ -17,24 +19,74 @@ include 'connection.php';
     <title>Giant Puzzle | 25 num & color</title>
 </head>
 <body>
-    <form method="POST">
-        <p>you want to save this game?</p>
+<!-- popup form -->
+<style>
+        #popup {
+            transition: .33s ease-out;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #F6F6F6;
+            border-radius: 20px;
+            box-shadow: 0px 0px 36px -1px rgba(53, 53, 53, 0.46);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 25px;
+            width: 700px;
+            height: 400px;
+            z-index: 10;
+            
+
+        }
+        #popup input {
+            border: 0px;
+        }
+        #popup input[type=text]{
+            background-color: transparent;
+            font-size: 25px;
+            text-align: center;
+        }
+        #popup input[type=button]{
+            background-color: brown;
+            height: 50px;
+            width: 120px;
+            border-radius: 20px;
+        }
+        #popup input[type=submit]{
+            background-color: rgb(88, 232, 72);
+            height: 50px;
+            width: 120px;
+            border-radius: 20px;
+        }
+    </style>
+    <form method="POST" id="popup">
         <span>Your time spent is:</span><input type="text" id="recopy_time" name="timeSpent">
+        <p>you want to save this game?</p>
         <div>
         <input type="submit" value="SAVE" name="save">
-        <input type="button" value="cancel" onclick="cancelSavine()">
+        <input type="button" value="cancel" onclick="backToMenu()">
         </div>
     </form>
+<!-- pop up for end -->
     <?php
+    if(isset($_SESSION['USER'])){
+        if(isset($_POST['save'])){
+            $dateTime = date('Y-m-d H:i:s');
+            $leveId = $_GET['level'];
+            $timeSpent = $_POST['timeSpent'];
+            $sql_score = "INSERT INTO `score` (`player_id`, `level_id`, `date`, `time_spent`) VALUES ($userId, $leveId, '$dateTime', '$timeSpent')";
+            mysqli_query($conn, $sql_score);
+    
+        }
+        else {
+            echo '<script>alert("You have to connect your account for saving score") </script>';
+        } 
+    }
 
-     if(isset($_POST['save'])){
-        $dateTime = date('Y-m-d H:i:s');
-        $leveId = $_GET['level'];
-        $timeSpent = $_POST['timeSpent'];
-        $sql_score = "INSERT INTO `score` (`player_id`, `level_id`, `date`, `time_spent`) VALUES ($userId, $leveId, '$dateTime', '$timeSpent')";
-        mysqli_query($conn, $sql_score);
-
-    } ?>
+    ?>
     <div id="lastRecord"><span>your last recored time is : <input type="button" value="" id="timeSpent"></span></div>
     <a onclick="backToMenu()">
         <img src="img/exit.png" alt="go back" id="go-back">
@@ -42,6 +94,8 @@ include 'connection.php';
     <p id="username"><?php if(isset($_SESSION['USER'])){echo $_SESSION['USER'];} else {echo "you're not connected";}; ?></p>
     <?php if(isset($_SESSION['USER'])){ echo '<img src="img/pfp.png"id="pfp">';} else{echo '<a href="sign-in.php"><img src="img/notconnected.png"id="notConnect""></a>';} ?>
     <div id="container">
+        <button onclick="fill()">fill</button>
+        <button onclick="testVal()">test</button>
         <div id="soduko">
             <div id="suduko-section">
             <input type='button' onclick='tile(this)' class='inps'>
@@ -85,7 +139,7 @@ include 'connection.php';
                 </div>
                 <div class="buttons">
                     <button id="startTimer" onclick="startGame()">Start</button>
-                    <button id="resetTimer" disabled onclick="endGame()">Reset</button>
+                    <button id="resetTimer" disabled onclick="endGame()">leave party</button>
                   </div>
             </div>
         </div>
@@ -118,12 +172,17 @@ include 'connection.php';
 <script src="script/game1.js">
 </script>
 <script>
+
+
     gameStart = false;
     var inps = document.querySelectorAll('.inps')
     function endGame(){
+
+        var confirmFoem = document.getElementById('popup');
+        confirmFoem.style.top = '50%'
+
         document.getElementById('timeSpent').value = [seconds,minutes,hours]
         document.getElementById('recopy_time').value = [seconds,minutes,hours]
-        alert([seconds,minutes,hours])
         gameStart = false;
 
         for(i=0; i<=inps.length; i++){
@@ -137,6 +196,14 @@ include 'connection.php';
     }
 
     function startGame() {
+        for(i=0; i<=inps.length; i++){
+            inps[i].value = '';
+            inps[i].style.backgroundImage = '';
+            inps[i].style.backgroundSize = emptyTile.style.backgroundSize;
+            emptyTile.value = '';
+            emptyTile.style.backgroundImage = '';
+            emptyTile.style.backgroundSize = emptyTile.style.backgroundSize;
+        }
         gameStart = true;
         if(gameStart){
        
