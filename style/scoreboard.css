@@ -82,8 +82,18 @@ body {
     right: 300px;
     bottom: 50px;
 }
+#rank-box1 {
+    background-color: #8dbcf5;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    height: 135px;
+    width: 100%;
+    margin-bottom: 40px;
+}
 #rank-box {
-    background-color: aqua;
+    background-color: #bfdcff;
     border-radius: 20px;
     align-items: center;
     justify-content: space-evenly;

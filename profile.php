@@ -49,7 +49,7 @@ include 'connection.php';
 
                 </div>
                 <div id="info">
-                    <p id="email"><?php echo $user_email; ?></p>
+                    <p id="userEmail"><?php echo $user_email; ?></p>
                     <p id="games">Wins: <?php echo $row["COUNT('player_id')"]; ?></p>
                 </div>
                 <div id="btns">

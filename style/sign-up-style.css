@@ -60,6 +60,10 @@ p {
     z-index: 3;
     
 }
+#email{
+    color: #2C3761;
+    font-size: 32px;
+}
 #menu-form>#user-pfp {
     background-color: #ffffff8c;
     width: 246px;
@@ -81,7 +85,8 @@ p {
     color: #2C3761;
     font-size: 32px;
 }
-#email {
+#userEmail {
+    text-align: center;
     font-size: 20px !important;
     width: 411px !important;
     word-wrap: break-word !important;

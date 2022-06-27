@@ -61,14 +61,16 @@ timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
 var inputs = document.querySelectorAll("#suduko-section input");
 
 function fill(){
-    for(i=0 ; i<25 ; i++){
-        inputs[i].value = i;
+    if(gameStart == true){
+        for(i=0 ; i<25 ; i++){
+            inputs[i].value = i;
+        }
     }
 }
     
 function testVal(){
 
-   while(gameStart == true){
+
      // var take error for validate
      errFound = 0;
 
@@ -188,11 +190,14 @@ function testVal(){
 
      if(errFound == 0){
         alert('you won!')
+        document.getElementById('timeSpent').value = [seconds,minutes,hours]
+        document.getElementById('recopy_time').value = [seconds,minutes,hours]
+        gameStart = false;
         var confirmFoem = document.getElementById('popup');
         confirmFoem.style.top = '50%'
-        break
-       }
-   }
+        
+    }
+   
 
     
 }
